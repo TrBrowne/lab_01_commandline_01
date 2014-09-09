@@ -1,4 +1,5 @@
-Lab - Entering Commands
+
+Lab - Navigating the File System
 ==========
 Follow the instructions line-by-line.  
 
@@ -7,168 +8,287 @@ Follow the instructions line-by-line.
 * "No output" or "nothing happens" are valid answers to any of the questions.
 ==========
 
-
-
 ==========
-1. Open Terminal.  Type:
-
-$ ls<ENTER>
-
-Copy and paste the output of ls below.
+1. Open a new terminal window.
 ----------
-Applications	Downloads	Music		Public		VirtualBox VMs
-Desktop		Library		My Song.band	Sites		vms
-Documents	Movies		Pictures	Things
-ent-v321-012:~ student$ 
-
 
 ==========
-2a. Type: 
-
-$ ls D<TAB>
-
-What happens?  Describe it below.
+2. Create a directory called mtec1002.
 ----------
-nothing
-
 
 ==========
-2b. Press <TAB> one more time.  Copy and paste the output below.	
+3. Change your directory so that you're in mtec1002.
 ----------
-gives the options starting with D
-ent-v321-012:~ student$ ls D
-Desktop/   Documents/ Downloads/
 
 ==========
-2c. Now press <ENTER>. Copy and paste the output below.
+4. Type:
+
+$ pwd
+
+Check that the output ends with mtec1002 (something like this: /Users/joe/mtec1002).
+
+If it doesn't start at #1 again, or ask for help before moving on!
+
+Copy and paste the output of pwd below.
 ----------
-ent-v321-012:~ student$ ls D
-ls: D: No such file or directory
+/Users/student/mtec1003
+ent-v321-012:mtec1003 student$
 
 
 ==========
-3.  Type:
+5. Type:
 
-$ ls -l Documents<ENTER>
-
-Copy and paste the first *two lines* of output below.
-----------
--rw-------   1 student  staff  638283 Jan 23  2009 About Stacks.pdf
-drwxr-xr-x   6 student  staff     204 Jan 22  2014 Adobe
-
-
-==========
-4.  Type:
-
-$ ls -a Documents
-
-Copy and paste the first *two lines* of output below.
-----------
-.			.promptCache		Color Documents		Max			Version Cue
-..			About Stacks.pdf	Eclipse			Microsoft User Data	Wacom Tablet Tutorial
-
-
-==========
-5.  Type:
-
-<UP><ENTER>
-
-What command was repeated?
-----------
-The previous command you inputed 
-
-
-==========
-6.  Type:
-
-<UP><UP><UP><DOWN><ENTER>
-
-What command was repeated?
-----------
-it went through the command history. 
-
-
-==========
-7.  Type:
-
-$ ls /Vol<TAB><ENTER>
-
-What is the result of pressing tab?
-----------
-it spelled the word voulumes, completes the wording
-
-
-==========
-8.  Type:
-
-$ ls doesnotexist
+$ mkdir animals
+$ ls
 
 Copy and paste the output below.
 ----------
-ent-v321-012:~ student$ ls doesnotexist
-ls: doesnotexist: No such file or directory
+animals
 
 
 ==========
-9.  What key do I press to go to the previous command?
-----------
-<up>
+6. Type:
 
-
-==========
-10.  Name two flags that we used in this exercise.
-----------
--a and -l
-
-
-==========
-11.  What key do I use to attempt to autocomplete a command or a file name?
-----------
-<tab> <enter>
-
-
-==========
-12.  What was the main command that we used throughout this exercise?
-----------
-ls
-
-
-==========
-13.  Name one argument that we passed to the command.
-----------
-Documents
-
-
-==========
-14.  Type:
-
-$ foo<ENTER>
+$ mkdir food
+$ ls
 
 Copy and paste the output below.
 ----------
--bash: foo: command not found
-ent-v321-012:~ student$ 
+animals	food
 
 
 ==========
-15.  Type:
+7. Type:
 
-<UP><ENTER>
+$ mkdir -p foo/bar/baz/qux
+$ ls
 
 Copy and paste the output below.
 ----------
--bash: foo: command not found
-ent-v321-012:~ student$ 
+animals	foo	food
+
 
 
 ==========
-16.  In the following line....
+8. Type:
 
-$ ls -a Desktop
+$ cd foo/bar/baz/qux
+$ pwd
 
-What is the command, flag, argument, and prompt?
----------- 
-command: ls
-flag: -a
-arguement: Desktop
-prompt: $
+Copy and paste the output below.
+----------
+/Users/student/mtec1003/foo/bar/baz/qux
+
+
+==========
+9. Type:
+
+$ cd ../..
+$ pwd
+
+Copy and paste the output below.
+----------
+
+/Users/student/mtec1003/foo/bar
+
+==========
+10. Type:
+
+$ cd -
+$ pwd
+
+Copy and paste the output below.
+----------
+
+/Users/student/mtec1003/foo/bar/baz/qux
+ 
+==========
+11. Type:
+
+$ cd ../../../..
+$ pwd
+
+Copy and paste the output below.
+----------
+/Users/student/mtec1003
+
+
+==========
+12. Type:
+
+$ ls -l
+$ rmdir animals
+$ ls -l
+
+Copy and paste the first two lines from the output into the space below.
+----------
+
+drwxr-xr-x  4 student  staff  136 Sep  8 20:08 foo
+drwxr-xr-x  2 student  staff   68 Sep  8 20:05 food
+
+==========
+13. Type:
+
+$ cd ~
+$ pwd
+
+Copy and paste the output into the space below.
+----------
+/Users/student
+
+
+==========
+14. Type:
+
+$ cd /Volumes
+$ pwd
+
+Copy and paste the output into the space below.
+----------
+/Volumes
+
+
+==========
+15. Type:
+
+$ cd /unknown_folder
+$ pwd
+
+Copy and paste the output into the space below.
+----------
+
+
+
+==========
+16. Type:
+
+$ cd ~/mtec1002
+$ pwd
+
+Copy and paste the output into the space below.
+----------
+/Volumes
+
+
+==========
+17. Type:
+
+$ hostname
+
+Copy and paste the output into the space below.
+----------
+ent-v321-012.local
+
+
+==========
+18a. Make sure you're back in your mtec1002, which should be in your home folder.  What command would you use to find out if you're in the right folder?  Write the command below, then run it.
+----------
+pwd
+
+
+==========
+18b. If you're not in the right directory, type the following command:
+
+cd ~/mtec1002
+
+Otherwise skip this question/step!
+----------
+
+
+
+==========
+19. Create the following directories, with each one inside each other.  The first one, pinapple, is the inner most:
+
+pineapple
+orange
+strawberry
+lemon
+
+Use only one command to make all of these new directories.  Write what command you used below:
+----------
+mkdir -p
+
+
+==========
+20. Make another directory called aardvark.  
+
+Write the command you used to create the directory below:
+----------
+mkdir
+
+
+==========
+21. List the files and directories in the current directory using the long format.  
+
+What is the modified date of the aardvark directory?
+----------
+68 Sep  8 20:38 aardvark
+
+
+==========
+22. Make 3 directories nested within each other:
+
+* foo should be the outermost directory
+* bar should be the inside foo
+* baz should be inside bar
+
+What command did you use?
+----------
+mkdir -p
+
+
+==========
+23. Change your directory so that you're in the inner most directory (baz)
+
+What command did you use?
+----------
+cd - baz
+
+
+==========
+24. Change your directory so that you're two directories up (foo)
+
+What command did you use?
+----------
+cd ../..
+
+==========
+25. What command is used to delete empty directories?
+----------
+
+rmdir
+
+==========
+26. What command is used to print out your current working directory?
+----------
+pwd
+
+
+==========
+27. What flag do I pass to ls to print out all files?
+----------
+
+
+
+==========
+28. What's the shortcut for home directory?
+----------
+cd ~
+
+
+==========
+29. What's a pathname?
+----------
+sequance of directores that get you from point A to point B
+
+
+==========
+30. What's a directory?
+----------
+
+folder
+
+==========
+31. What's the *absolute* path (full path, starting at root) to your user's Downloads directory?
+----------
+user/student/downloads
